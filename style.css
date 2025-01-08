@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #e67f1f;
+    text-align: center;
+    font-size: 5rem;
+    margin-top: 20px;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual ancho */
+    gap: 20px; /* Espacio entre los elementos */
+    margin: 20px; /* Margen alrededor del contenedor */
+}
+
+.product {
+    background-color: #fff; /* Fondo blanco para las tarjetas */
+    border: 1px solid #ddd; /* Borde ligero */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 15px; /* Espaciado interno */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+    text-align: center; /* Centrar contenido */
+}
+
+.product img {
+    max-width: 100%; /* Ajustar ancho máximo a su contenedor */
+    height: auto; /* Mantener la proporción */
+    margin-bottom: 10px; /* Espaciado debajo de la imagen */
+}
+
+
+.product a {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #007bff; /* Color azul */
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Efecto suave al pasar el mouse */
+}
+
+.product a:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+
+.product a:hover {
+    background-color: #e67f1f;
+}
+
+
+/* Estilo para el carrito */
+.cart-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    z-index: 1000;
+}
+
+/* Botón de carrito (más pequeño) */
+.cart-toggle-btn {
+    background-color: #007bff; /* Color del botón */
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+}
+
+.cart-toggle-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Lista de productos en el carrito */
+.cart-items {
+    display: none;
+    margin-top: 10px;
+}
+
+.cart-items ul {
+    list-style-type: none;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto; /* Permite desplazamiento si hay muchos productos */
+}
+
+.cart-items li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.cart-items a {
+    color: red;
+    text-decoration: none;
+}
+
+
+.auth-buttons button {
+    background-color: #007bff; /* Azul */
+    color: white; /* Texto blanco */
+    border: none; /* Sin bordes */
+    padding: 10px 15px; /* Espaciado interno */
+    margin: 5px; /* Separación entre botones */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de texto */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    transition: background-color 0.3s ease; /* Animación suave */
+}
+
+.auth-buttons button:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
