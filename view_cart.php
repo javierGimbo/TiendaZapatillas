@@ -2,7 +2,7 @@
 session_start();
 require_once 'config.php';
 
-// Verificar acción de eliminar
+// Comprobar acción de eliminar
 if (isset($_GET['action']) && $_GET['action'] == 'remove' && isset($_GET['id'])) {
     $productIdToRemove = $_GET['id'];
 
@@ -19,13 +19,13 @@ if (isset($_GET['action']) && $_GET['action'] == 'remove' && isset($_GET['id']))
     exit;
 }
 
-// Verificar si el carrito está vacío
+// Compriobar si el carrito está vacío
 if (!isset($_SESSION['cart']) || count($_SESSION['cart']) == 0) {
     echo "Tu carrito está vacío.";
     exit;
 }
 
-// Obtener los IDs de los productos en el carrito
+// Obtener los ID de los productos en el carrito
 $cartItems = $_SESSION['cart'];
 $cartProductIds = implode(",", $cartItems);
 
@@ -36,7 +36,7 @@ $total = 0;
 echo "<h2>Tu carrito:</h2>";
 echo "<ul>";
 
-// Mostrar los productos en el carrito con un botón para eliminar
+// Mostrar los productos en el carrito con un botón que sea para eliminar
 while ($product = $stmt->fetch()) {
     echo "<li>";
     echo $product['name'] . " - Precio: $" . $product['price'];

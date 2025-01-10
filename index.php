@@ -2,6 +2,8 @@
 session_start(); 
 require_once 'config.php'; // Conexión a la base de datos
 
+// /*http://localhost/actividades/prueba/index.php 
+
 // Comprobar si la conexión a la base de datos se establece correctamente
 if (!$pdo) {
     die("Error de conexión con la base de datos.");
@@ -12,10 +14,10 @@ if (!$pdo) {
 // Obtener los productos
 $stmt = $pdo->query("SELECT * FROM products");  //$stmt es una abreviatura para rescatar los datos de la BBDD
 
-// Verificar si la sesión está iniciada
+// Comprobar si la sesión está iniciada
 $isLoggedIn = isset($_SESSION['username']);
 
-// Obtener el rol del usuario, si está autenticado
+// Obtener el rol del usuario, si está registrado
 $userRole = null;
 if ($isLoggedIn) {
     $stmtRole = $pdo->prepare("SELECT role FROM users WHERE username = :username");
@@ -40,7 +42,7 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
     }
 }
 ?>
-<!-- /*http://localhost/actividades/prueba/index.php --> 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -51,7 +53,7 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
 </head>
 <body>
 
-<!-- Mostrar botones de inicio de sesión o registrar según el estado de la sesión -->
+<!-- Mostrar botones de inicio de sesión o registrar -->
 <?php if ($isLoggedIn): ?>
     <p>Bienvenido, <?php echo htmlspecialchars($_SESSION['username']); ?></p>
     <?php if ($userRole === 'admin'): ?>

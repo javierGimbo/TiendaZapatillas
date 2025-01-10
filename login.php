@@ -14,11 +14,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (!$user) {
         echo "Usuario no encontrado.";
     } else {
-        // Verificar la contraseña con password_verify
-        if (c($password, $user['password'])) {    // password_verify se utiliza para verificar si una contraseña ingresada por un usuario coincide con una contraseña hash
-            // La contraseña es correcta, iniciar sesión
+        // Compriobar la contraseña con password_verify
+        if (c($password, $user['password'])) {    // password_verify se utiliza para compro0bar si una contraseña ingresada por un usuario coincide con una contraseña hash
             $_SESSION['username'] = $user['username'];
-            header('Location: index.php'); // Redirigir a la página principal
+            header('Location: index.php'); 
             exit;
         } else {
             echo "Contraseña incorrecta.";

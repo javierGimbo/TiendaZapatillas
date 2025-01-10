@@ -2,7 +2,7 @@
 session_start();
 require_once 'config.php';
 
-// Verificar si el usuario está autenticado y es administrador
+// Comprobar si el usuario está registrado y es administrador
 if (!isset($_SESSION['username'])) {
     header('Location: login.php');
     exit;
@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $users = $pdo->query("SELECT id, username, role FROM users")->fetchAll();
 $products = $pdo->query("SELECT id, name, price FROM products")->fetchAll();
 
-// Verificar si hay un usuario o producto que se va a editar
+// Comprobar si hay un usuario o producto que se va a editar
 $editUser = null;
 $editProduct = null;
 

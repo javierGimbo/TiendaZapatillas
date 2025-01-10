@@ -5,6 +5,7 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Titulo */
 h1 {
     color: #e67f1f;
     text-align: center;
@@ -110,7 +111,7 @@ header a {
     list-style-type: none;
     padding: 0;
     max-height: 200px;
-    overflow-y: auto; /* Permite desplazamiento si hay muchos productos */
+    overflow-y: auto; 
 }
 
 .cart-items li {

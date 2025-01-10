@@ -1,7 +1,7 @@
 <?php
 session_start();  // Asegúrate de que la sesión está iniciada
 
-// Verificar si el parámetro 'action' es 'add' y si existe el parámetro 'id'
+// Comprobar si el parámetro 'action' es 'add' y si existe el parámetro 'id'
 if (isset($_GET['action']) && $_GET['action'] == 'add' && isset($_GET['id'])) {
     $productId = $_GET['id'];
 
@@ -18,7 +18,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'add' && isset($_GET['id'])) {
     exit;
 }
 
-// Verificar si el parámetro 'action' es 'remove' y si existe el parámetro 'id'
+// Comprobar si el parámetro 'action' es 'remove' y si existe el parámetro 'id'
 if (isset($_GET['action']) && $_GET['action'] == 'remove' && isset($_GET['id'])) {
     $productId = $_GET['id'];
 

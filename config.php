@@ -1,6 +1,6 @@
 <?php
-$host = 'localhost';  // Cambia esto si tienes otro host
-$db = 'tienda_zapatillas'; // Nombre de la base de datos
+$host = 'localhost';  
+$db = 'tienda_zapatillas'; // nombre de la base de datos
 $user = 'root'; 
 $pass = ''; 
 

@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Cifrar la contraseña antes de guardarla
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    // Verificar que el usuario no existe
+    // Comprobar que el usuario no existe
     $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
     $stmt->execute(['username' => $username]);
     $user = $stmt->fetch();
