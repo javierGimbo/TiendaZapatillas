@@ -9,13 +9,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Cifrar la contraseña antes de guardarla
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    // Verificar que el usuario no exista ya
+    // Verificar que el usuario no existe
     $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username");
     $stmt->execute(['username' => $username]);
     $user = $stmt->fetch();
 
     if ($user) {
-        echo "El nombre de usuario ya está en uso.";
+        echo "El nombre de usuario ya existe";
     } else {
         // Insertar el nuevo usuario en la base de datos
         $stmt = $pdo->prepare("INSERT INTO users (username, password) VALUES (:username, :password)");

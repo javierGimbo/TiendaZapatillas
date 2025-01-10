@@ -11,7 +11,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'remove' && isset($_GET['id']))
         $_SESSION['cart'] = array_filter($_SESSION['cart'], function($item) use ($productIdToRemove) {
             return $item != $productIdToRemove;
         });
-        $_SESSION['cart'] = array_values($_SESSION['cart']); // Reindexar el array
+        $_SESSION['cart'] = array_values($_SESSION['cart']); // reorganizar el array al borrrar algo del carritop
     }
 
     // Redirigir a la página del carrito después de eliminar
@@ -36,7 +36,7 @@ $total = 0;
 echo "<h2>Tu carrito:</h2>";
 echo "<ul>";
 
-// Mostrar los productos con un botón para eliminar
+// Mostrar los productos en el carrito con un botón para eliminar
 while ($product = $stmt->fetch()) {
     echo "<li>";
     echo $product['name'] . " - Precio: $" . $product['price'];

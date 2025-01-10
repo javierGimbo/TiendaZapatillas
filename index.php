@@ -1,5 +1,5 @@
 <?php
-session_start(); // Asegúrate de que la sesión está iniciada
+session_start(); 
 require_once 'config.php'; // Conexión a la base de datos
 
 // Comprobar si la conexión a la base de datos se establece correctamente
@@ -7,8 +7,10 @@ if (!$pdo) {
     die("Error de conexión con la base de datos.");
 }
 
+
+
 // Obtener los productos
-$stmt = $pdo->query("SELECT * FROM products");
+$stmt = $pdo->query("SELECT * FROM products");  //$stmt es una abreviatura para rescatar los datos de la BBDD
 
 // Verificar si la sesión está iniciada
 $isLoggedIn = isset($_SESSION['username']);
@@ -38,13 +40,13 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
     }
 }
 ?>
-
+<!-- /*http://localhost/actividades/prueba/index.php --> 
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda de Zapatillas</title>
+    <title>Kicks</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -58,7 +60,7 @@ if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
     <button class="auth-button" onclick="window.location.href='logout.php'">Cerrar sesión</button>
 <?php else: ?>
     <div class="auth-buttons">
-        <button class="auth-button" onclick="window.location.href='login.php'">Iniciar sesión</button>
+        <button class="auth-button" onclick="window.location.href='login.php'">Iniciar sesión</button>  <!-- window.location.href se refiere a la URL actual del navegador, y puedes modificarla para cambiar a una nueva URL -->
         <button class="auth-button" onclick="window.location.href='register.php'">Registrar</button>
     </div>
 <?php endif; ?>

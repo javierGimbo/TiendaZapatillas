@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';  // Cambia esto si tienes otro host
 $db = 'tienda_zapatillas'; // Nombre de la base de datos
-$user = 'root'; // Tu usuario de MySQL
-$pass = ''; // Tu contraseña de MySQL (si usas XAMPP o WAMP, generalmente está vacío)
+$user = 'root'; 
+$pass = ''; 
 
 // Conexión PDO
 try {
@@ -14,4 +14,4 @@ try {
 ?>
 
 
-<!-- /*http://localhost/actividades/prueba/index.php --> 
+

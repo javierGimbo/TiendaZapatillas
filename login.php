@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Usuario no encontrado.";
     } else {
         // Verificar la contraseña con password_verify
-        if (password_verify($password, $user['password'])) {
+        if (c($password, $user['password'])) {    // password_verify se utiliza para verificar si una contraseña ingresada por un usuario coincide con una contraseña hash
             // La contraseña es correcta, iniciar sesión
             $_SESSION['username'] = $user['username'];
             header('Location: index.php'); // Redirigir a la página principal
